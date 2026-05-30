@@ -1,6 +1,6 @@
 # Kitchen Gym — Prototype Spec
 
-One-room Godot 4 vertical slice to test **fast destruction**, **planted charges**, and **tactical detonation**.
+One-room vertical slice to test **fast destruction**, **planted charges**, and **tactical detonation**.
 
 ## Hypotheses
 
@@ -31,28 +31,32 @@ One-room Godot 4 vertical slice to test **fast destruction**, **planted charges*
 4. Hold **Tab** for tactical view → **E** to detonate → rack triggers → wall opens.
 5. Reach the green goal platform.
 
-## Run in Godot
+## Run in browser
 
-1. Install [Godot 4.2+](https://godotengine.org/download).
-2. Import project: open `/workspace` (contains `project.godot`).
-3. Press F5 (main scene: `scenes/kitchen_gym.tscn`).
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL (default `http://localhost:5173`).
 
 ## Project layout
 
 ```
-scripts/
-  game_globals.gd    # Autoload: armed bombs, tactical flag, hit-stop
-  player.gd          # Platforming + throw/plant/detonate
-  weak_point.gd      # One-shot breakables
-  throwable_bomb.gd  # Instant weak-point break
-  planted_bomb.gd    # Armed charge + blast
-  chain_prop.gd      # Rack → triggers linked weak wall
-  tactical_camera.gd # Zoom + overlay
-  kitchen_gym.gd     # Level build + UI
-scenes/
-  kitchen_gym.tscn
-  player.tscn
-  throwable_bomb.tscn
+src/
+  main.js                 # Phaser bootstrap
+  config.js               # Constants + helpers
+  systems/
+    GameGlobals.js        # Armed bombs, tactical flag, hit-stop
+    TacticalCamera.js     # Zoom + overlay
+  entities/
+    Player.js             # Platforming + throw/plant/detonate
+    WeakPoint.js          # One-shot breakables
+    ThrowableBomb.js      # Instant weak-point break
+    PlantedBomb.js        # Armed charge + blast
+    ChainRack.js          # Rack → triggers linked weak wall
+  scenes/
+    KitchenGymScene.js    # Level build + UI
 ```
 
 ## Out of scope (this build)

@@ -4,7 +4,7 @@ Dead Cells–style 2D roguelite platformer concept — bombs as weapons and door
 
 ## Kitchen Gym (playable prototype)
 
-A single handcrafted room in **Godot 4** to test:
+A single handcrafted room in the browser to test:
 
 - Fast platforming (coyote time, jump buffer, roll)
 - Instant destruction (throw → break weak floor → drop)
@@ -13,12 +13,27 @@ A single handcrafted room in **Godot 4** to test:
 
 ### Quick start
 
-1. Download [Godot 4.2+](https://godotengine.org/download).
-2. Open this folder in Godot (select `project.godot`).
-3. Run (F5) — main scene: `scenes/kitchen_gym.tscn`.
+1. Install [Node.js 18+](https://nodejs.org/).
+2. From this folder:
+
+```bash
+npm install
+npm run dev
+```
+
+3. Open the URL shown in the terminal (default `http://localhost:5173`).
 
 See [docs/kitchen-gym-prototype.md](docs/kitchen-gym-prototype.md) for controls and the intended route.
 
 ### Controls (summary)
 
 **A/D** move · **Space** jump · **Shift** roll · **J** throw · **K** plant · **E** detonate · **Tab** tactical view · **R** restart
+
+### Build
+
+```bash
+npm run build
+npm run preview
+```
+
+Static output goes to `dist/` for deployment when you're ready.

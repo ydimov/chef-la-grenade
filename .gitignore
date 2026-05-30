@@ -1,7 +1,11 @@
-# Godot
+# Godot (legacy — removed after web migration)
 .godot/
 *.translation
 export_presets.cfg
+
+# Node / web build
+node_modules/
+dist/
 
 # OS / editor
 .DS_Store
